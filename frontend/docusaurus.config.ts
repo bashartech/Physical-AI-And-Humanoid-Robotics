@@ -164,7 +164,7 @@ const config: Config = {
   favicon: 'img/logo_doca.PNG',
 
 
-  url: 'https://ai-research-reads.netlify.app/',
+  url: 'https://physical-ai-and-humanoid-robotics-x.vercel.app/',
   baseUrl: '/Physical-AI-And-Humanoid-Robotics/',
   organizationName: 'bashartech',
   projectName: 'Physical-AI-And-Humanoid-Robotics',
