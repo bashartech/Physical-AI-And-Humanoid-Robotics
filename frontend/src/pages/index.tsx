@@ -73,10 +73,10 @@ function HomepageHeader() {
               <span className={styles.btnIcon}>📖</span>
               <span>Start Reading</span>
             </Link>
-            <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/features">
+            {/* <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="#features">
               <span className={styles.btnIcon}>🔬</span>
               <span>View Features</span>
-            </Link>
+            </Link> */}
           </div>
 
           <div className={styles.highlights}>
