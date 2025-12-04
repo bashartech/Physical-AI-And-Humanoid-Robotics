@@ -165,7 +165,7 @@ const config: Config = {
 
 
   url: 'https://physical-ai-and-humanoid-robotics-x.vercel.app/',
-  baseUrl: '/Physical-AI-And-Humanoid-Robotics/',
+  baseUrl: '/',
   organizationName: 'bashartech',
   projectName: 'Physical-AI-And-Humanoid-Robotics',
   onBrokenLinks: 'throw',
