@@ -163,8 +163,8 @@ const config: Config = {
   tagline: 'A Comprehensive Guide to Building the Next Generation of Humanoid Intelligence.',
   favicon: 'img/logo_doca.PNG',
 
-  // url: 'https://bashartech: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C@github.com/bashartech/Physical-AI-And-Humanoid-Robotics.git',
-  url: 'https://physical-ai-and-humanoid-robotics-seven.vercel.app/',
+
+  url: 'https://ai-research-reads.netlify.app/',
   baseUrl: '/Physical-AI-And-Humanoid-Robotics/',
   organizationName: 'bashartech',
   projectName: 'Physical-AI-And-Humanoid-Robotics',
