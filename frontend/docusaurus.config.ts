@@ -163,12 +163,13 @@ const config: Config = {
   tagline: 'A Comprehensive Guide to Building the Next Generation of Humanoid Intelligence.',
   favicon: 'img/logo_doca.PNG',
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
-  organizationName: 'your-org',
-  projectName: 'my-docusaurus-site',
+  url: 'https://bashartech.github.io',
+  baseUrl: '/Physical-AI-And-Humanoid-Robotics/',
+  organizationName: 'bashartech',
+  projectName: 'Physical-AI-And-Humanoid-Robotics',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  deploymentBranch:"deployment",
 
   i18n: {
     defaultLocale: 'en',
