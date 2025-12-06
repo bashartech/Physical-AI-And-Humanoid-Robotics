@@ -186,6 +186,7 @@ const config: Config = {
           sidebarPath: require.resolve('./sidebars.ts'),
           editUrl: 'https://github.com/your-org/my-docusaurus-site/edit/main/',
         },
+        blog: false, 
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
