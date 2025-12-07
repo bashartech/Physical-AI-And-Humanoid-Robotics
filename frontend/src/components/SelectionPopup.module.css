@@ -1,0 +1,26 @@
+.selectionPopup {
+    position: absolute;
+    background-color: var(--ifm-color-primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000; /* Ensure it's above other content */
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectionPopup button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.selectionPopup button:hover {
+    text-decoration: underline;
+}

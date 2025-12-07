@@ -1,0 +1,11 @@
+python-dotenv
+qdrant-client
+sentence-transformers
+python-frontmatter
+tiktoken
+fastapi-limiter[redis]
+redis
+cohere
+openai-agents
+trafilatura
+fastapi
