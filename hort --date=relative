@@ -1,0 +1,19 @@
+[33m7fe43a6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m1-rag-chatbot-book[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to origin/main
+[33m821bb8a[m HEAD@{1}: commit (merge): update
+[33mf41f4c0[m HEAD@{2}: commit: update
+[33m7fe43a6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m1-rag-chatbot-book[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{3}: checkout: moving from main to 1-rag-chatbot-book
+[33m7fe43a6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m1-rag-chatbot-book[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{4}: commit: update
+[33m5f262e6[m HEAD@{5}: commit: update
+[33m9c27119[m HEAD@{6}: commit: update
+[33m17e66a9[m HEAD@{7}: commit: update
+[33ma73c436[m HEAD@{8}: commit: update
+[33m6b18d6a[m[33m ([m[1;31morigin/deployment[m[33m)[m HEAD@{9}: pull origin main --rebase (finish): returning to refs/heads/main
+[33m6b18d6a[m[33m ([m[1;31morigin/deployment[m[33m)[m HEAD@{10}: pull origin main --rebase (pick): update
+[33m0f6672f[m HEAD@{11}: pull origin main --rebase (start): checkout 0f6672f2eb3d22a00dbacf1194de899339f26093
+[33mf2ce60e[m HEAD@{12}: reset: moving to HEAD
+[33mf2ce60e[m HEAD@{13}: commit: update
+[33m7bc8f54[m HEAD@{14}: Branch: renamed refs/heads/001-read-style-md to refs/heads/main
+[33m7bc8f54[m HEAD@{16}: commit: first commit
+[33m2d6be3b[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{17}: checkout: moving from 001-read-style-md to 001-read-style-md
+[33m2d6be3b[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{18}: checkout: moving from master to 001-read-style-md
+[33m2d6be3b[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{19}: commit (initial): Initial commit from Specify template
