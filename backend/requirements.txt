@@ -9,3 +9,4 @@ cohere
 openai-agents
 trafilatura
 fastapi
+uvicorn

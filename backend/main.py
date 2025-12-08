@@ -35,7 +35,7 @@ provider = AsyncOpenAI(
 )
 
 chat_model = OpenAIChatCompletionsModel(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     openai_client=provider
 )
 
@@ -117,4 +117,3 @@ async def chat(request: ChatRequest):
         traceback.print_exc()   # <-- FULL ERROR TRACEBACK
         raise HTTPException(status_code=500, detail=str(e))
 
-# asyncio.run(chat(ChatRequest(query="what is physical ai")))

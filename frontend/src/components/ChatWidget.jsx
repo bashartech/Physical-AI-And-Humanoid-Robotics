@@ -1,7 +1,9 @@
-
-// export default ChatWidget;
 "use client"
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from "react-markdown";            // ⭐ ADD
+import remarkGfm from "remark-gfm";                   // ⭐ ADD
+import rehypeRaw from "rehype-raw";                   // ⭐ ADD
+
 import styles from './ChatWidget.module.css';
 
 const ChatWidget = ({ initialSelectedText = '' }) => {
@@ -16,7 +18,6 @@ const ChatWidget = ({ initialSelectedText = '' }) => {
     setIsConstrained(!!initialSelectedText);
   }, [initialSelectedText]);
 
-   // ⭐ ADD THIS — push selected text into chat
   useEffect(() => {
     if (initialSelectedText) {
       setChatHistory((prev) => [
@@ -29,9 +30,7 @@ const ChatWidget = ({ initialSelectedText = '' }) => {
     }
   }, [initialSelectedText]);
 
-
   const toggleChat = () => setIsOpen(!isOpen);
-
   const handleQuestionChange = (e) => setQuestion(e.target.value);
 
   const handleSubmit = async (e) => {
@@ -51,16 +50,20 @@ const ChatWidget = ({ initialSelectedText = '' }) => {
           selection_text: initialSelectedText
         }),
       });
-      console.log(response)
 
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
       const data = await response.json();
+
       const botMessage = { type: 'bot', text: data.answer };
       setChatHistory((prev) => [...prev, botMessage]);
+
     } catch (error) {
       console.error('Chat API error:', error);
-      setChatHistory((prev) => [...prev, { type: 'bot', text: 'Error: Could not get a response.(quota exceeded)' }]);
+      setChatHistory((prev) => [
+        ...prev,
+        { type: 'bot', text: 'Error: Could not get a response. (quota exceeded)' }
+      ]);
     } finally {
       setIsLoading(false);
       setQuestion('');
@@ -71,21 +74,37 @@ const ChatWidget = ({ initialSelectedText = '' }) => {
   return (
     <div className={styles.chatWidgetContainer}>
       <button onClick={toggleChat} className={styles.toggleButton}>💬</button>
+
       {isOpen && (
         <div className={styles.chatWindow}>
           <div className={styles.chatHeader}>
             <h3>AI Chatbot</h3>
-            {isConstrained && <span className={styles.constrainedBadge}>Answer constrained to selection</span>}
+            {isConstrained && (
+              <span className={styles.constrainedBadge}>
+                Answer constrained to selection
+              </span>
+            )}
             <button onClick={toggleChat} className={styles.closeButton}>×</button>
           </div>
+
           <div className={styles.chatBody}>
             {chatHistory.map((msg, idx) => (
               <div key={idx} className={`${styles.chatMessage} ${styles[msg.type]}`}>
-                <p>{msg.text}</p>
+                
+                {/* ⭐ Markdown Renderer */}
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw]}
+                >
+                  {msg.text}
+                </ReactMarkdown>
+
               </div>
             ))}
+
             {isLoading && <div className={styles.loading}>Thinking...</div>}
           </div>
+
           <form onSubmit={handleSubmit} className={styles.chatInputForm}>
             <input
               type="text"
@@ -96,6 +115,7 @@ const ChatWidget = ({ initialSelectedText = '' }) => {
             />
             <button type="submit" disabled={isLoading}>Send</button>
           </form>
+
         </div>
       )}
     </div>
