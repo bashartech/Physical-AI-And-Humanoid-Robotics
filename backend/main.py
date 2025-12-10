@@ -20,7 +20,7 @@ app = FastAPI(title="Physical AI Chatbot")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React dev server
+    allow_origins=[os.getenv("NEXT_PUBLIC_FRONTEND_URL")],  # React dev server
     allow_methods=["*"],
     allow_headers=["*"],
 )

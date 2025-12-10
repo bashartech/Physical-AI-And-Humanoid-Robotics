@@ -17,6 +17,7 @@ import type {Props} from '@theme/Layout';
 import styles from './styles.module.css';
 import SelectionPopup from '../../components/SelectionPopup'; // Import SelectionPopup
 import ChatWidget from '../../components/ChatWidget';
+import { Toaster } from "../../components/ui/sonner"
 
 export default function Layout(props: Props): ReactNode {
   const {
@@ -80,6 +81,7 @@ const [initialQuestion, setInitialQuestion] = useState("");
 
       <SelectionPopup onSelectText={handleSelectionText} /> {/* Render SelectionPopup */}
       <ChatWidget initialSelectedText={initialQuestion} />
+       <Toaster />
       <div
         id={SkipToContentFallbackId}
         className={clsx(
