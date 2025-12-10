@@ -73,7 +73,9 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {label: 'GitHub', href: 'https://github.com/bashartech/Physical-AI-And-Humanoid-Robotics'},
+            {label: 'Sign Up', href: '/signup'},
+            {label: 'Login', href: '/login'},
+
           ],
         },
       ],
