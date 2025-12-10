@@ -62,7 +62,7 @@ const ChatWidget = ({ initialSelectedText = '' }) => {
       console.error('Chat API error:', error);
       setChatHistory((prev) => [
         ...prev,
-        { type: 'bot', text: 'Error: Could not get a response. (quota exceeded)' }
+        { type: 'bot', text: 'Error: Could not get a response. (backend not deploy)' }
       ]);
     } finally {
       setIsLoading(false);

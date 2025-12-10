@@ -1,6 +1,6 @@
 // import Image from "next/image";
 // import Link from "next/link";
-import { LoginForm } from "../components/login-form";
+import { LoginForm } from "../components/login-form
 import Link from "@docusaurus/Link";
 
 export default function LoginPage() {
