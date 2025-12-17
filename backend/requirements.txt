@@ -10,3 +10,6 @@ openai-agents
 trafilatura
 fastapi
 uvicorn
+psycopg[binary]
+google-generative-ai
+httpx

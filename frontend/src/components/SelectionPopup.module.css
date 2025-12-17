@@ -1,26 +1,72 @@
 .selectionPopup {
     position: absolute;
-    background-color: var(--ifm-color-primary);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    background: var(--bg-glass-solid);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 8px 12px;
     cursor: pointer;
-    z-index: 10000; /* Ensure it's above other content */
+    z-index: 10000;
     white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-md);
+    animation: scaleIn 0.2s ease-out;
+    gap: 8px;
+    min-height: 40px;
 }
 
 .selectionPopup button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color-light);
+    color: var(--text-primary);
+    font-size: 0.85rem;
     cursor: pointer;
-    padding: 0;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+    font-weight: 500;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .selectionPopup button:hover {
-    text-decoration: underline;
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+}
+
+.selectionPopup button:first-child {
+    margin-left: 0;
+}
+
+.selectionPopup button:last-child {
+    margin-right: 0;
+}
+
+/* Icon styling for buttons */
+.selectionPopup .icon {
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .selectionPopup {
+        padding: 6px 10px;
+        min-height: 36px;
+    }
+
+    .selectionPopup button {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
 }

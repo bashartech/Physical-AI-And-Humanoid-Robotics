@@ -51,6 +51,8 @@ const config: Config = {
       logo: {alt: 'Logo', src: 'img/logo_doca.PNG'},
       items: [
         {type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'Book'},
+        {href: process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000/login', label: 'Login', position: 'right'},
+        {href: process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000/signup', label: 'Sign Up', position: 'right'},
         {href: 'https://github.com/bashartech/Physical-AI-And-Humanoid-Robotics', label: 'GitHub', position: 'right'},
       ],
     },
@@ -66,15 +68,21 @@ const config: Config = {
           title: 'Community',
           items: [
             {label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/docusaurus'},
-            {label: 'Discord', href: 'https://discord.gg/docusaurus'},
-            {label: 'X', href: 'https://x.com/docusaurus'},
+            {label: 'Github', href: 'https://github.com/bashartech'},
+            {label: 'Linkedln', href: 'https://www.linkedin.com/in/m-bashar-sheikh?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'},
           ],
         },
         {
           title: 'More',
           items: [
-            {label: 'Sign Up', href: '/signup'},
-            {label: 'Login', href: '/login'},
+            {label: 'Sign Up'
+              , href:
+               'http://localhost:3000/signup'
+              },
+            {label: 'Login'
+              , href:
+               'http://localhost:3000/login'
+              },
 
           ],
         },

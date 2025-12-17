@@ -10,6 +10,7 @@ dependencies = [
     "fastembed>=0.7.3",
     "markdown>=3.10",
     "openai-agents>=0.6.1",
+    "psycopg>=3.3.2",
     "python-dotenv>=1.2.1",
     "python-frontmatter>=1.1.0",
     "qdrant-client>=1.16.1",
