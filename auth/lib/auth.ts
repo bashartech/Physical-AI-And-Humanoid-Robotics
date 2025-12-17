@@ -153,7 +153,10 @@ export function getAuth() {
         process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3001",
         process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000",
         process.env.BETTER_AUTH_URL || "http://localhost:3000",
-        "https://physical-ai-and-humanoid-robotics-x.vercel.app/"
+        "https://physical-ai-and-humanoid-robotics-x.vercel.app/",
+        "http://localhost:3000",
+        "http://localhost:3001"
+
       ],
 
       trustHost: true,

@@ -30,7 +30,7 @@ export default function LoginPage() {
       const result = await client.signIn.email({
         email: formData.email,
         password: formData.password,
-        callbackURL: process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3001', // Redirect to frontend after login
+        callbackURL: process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://physical-ai-and-humanoid-robotics-x.vercel.app/', // Redirect to frontend after login
       });
 
       if (result.error) {
@@ -38,7 +38,7 @@ export default function LoginPage() {
       } else {
         // Successful login - redirect will be handled by callbackURL
         // Or redirect manually if needed
-        window.location.href = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3001';
+        window.location.href = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://physical-ai-and-humanoid-robotics-x.vercel.app/';
       }
     } catch (err) {
       setError('An error occurred during login');
