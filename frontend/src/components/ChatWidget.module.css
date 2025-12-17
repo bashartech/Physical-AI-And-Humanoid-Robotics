@@ -1,4 +1,3 @@
-
 /* ============================================
    CHATBOT WIDGET - PREMIUM BLACK AI THEME
    Dark Glassmorphism + Bright Accents
@@ -311,14 +310,273 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .chatWidgetContainer {
+    bottom: 16px;
+    right: 16px;
+  }
+
   .chatWindow {
-    width: calc(100vw - 48px);
-    height: 550px;
+    width: calc(100vw - 32px);
+    height: calc(100vh - 140px);
+    max-height: 580px;
+    bottom: 80px;
+    right: -16px;
   }
 
   .toggleButton {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .chatHeader {
+    padding: 16px 20px;
+  }
+
+  .chatHeader h3 {
+    font-size: 1.15rem;
+  }
+
+  .closeButton {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .chatBody {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .chatInputForm {
+    padding: 16px 20px;
+    gap: 10px;
+  }
+
+  .chatInputForm input {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .chatInputForm button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .chatMessage {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+}
+
+/* Tablet and small desktop adjustments */
+@media (max-width: 1024px) {
+  .chatWindow {
+    width: 380px;
+    height: 560px;
+  }
+}
+
+/* Mobile landscape and small tablets */
+@media (max-width: 640px) {
+  .chatWidgetContainer {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .chatWindow {
+    width: calc(100vw - 24px);
+    height: calc(100vh - 120px);
+    max-height: 520px;
+    bottom: 70px;
+    right: -12px;
+    border-radius: 16px;
+  }
+
+  .toggleButton {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+
+  .chatHeader {
+    padding: 14px 16px;
+  }
+
+  .chatHeader h3 {
+    font-size: 1.05rem;
+  }
+
+  .closeButton {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .chatBody {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .chatInputForm {
+    padding: 12px 16px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .chatInputForm input {
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    min-width: 0;
+  }
+
+  .chatInputForm button {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .chatMessage {
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+  }
+
+  .constrainedBadge {
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    margin-left: 8px;
+  }
+
+  .sourcesContainer {
+    font-size: 0.8rem;
+    margin-top: 14px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .chatWidgetContainer {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .chatWindow {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 100px);
+    max-height: 480px;
+    bottom: 65px;
+    right: -10px;
+    border-radius: 14px;
+  }
+
+  .toggleButton {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .chatHeader {
+    padding: 12px 14px;
+  }
+
+  .chatHeader h3 {
+    font-size: 1rem;
+  }
+
+  .closeButton {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .chatBody {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .chatBody::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .chatInputForm {
+    padding: 10px 14px;
+    gap: 6px;
+  }
+
+  .chatInputForm input {
+    padding: 9px 11px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .chatInputForm button {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .chatMessage {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .chatWidgetContainer {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .chatWindow {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 90px);
+    max-height: 440px;
+    bottom: 60px;
+    right: -8px;
+  }
+
+  .toggleButton {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .chatHeader {
+    padding: 10px 12px;
+  }
+
+  .chatHeader h3 {
+    font-size: 0.95rem;
+  }
+
+  .closeButton {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .chatBody {
+    padding: 12px;
+  }
+
+  .chatInputForm {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .chatInputForm input {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .chatInputForm button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }
 
