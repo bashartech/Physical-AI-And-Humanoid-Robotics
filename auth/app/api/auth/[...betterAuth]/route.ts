@@ -1,5 +1,7 @@
 // app/api/auth/[...betterAuth]/route.ts
-import { auth } from "@/lib/auth";
+import { getAuth } from "@/lib/auth";
+
+const auth = getAuth()
 
 
 export const GET = auth.handler;
