@@ -1,72 +1,132 @@
+
+
+/* ============================================
+   SELECTION POPUP - PREMIUM BLACK AI THEME
+   Smart Text Actions with Dark Glassmorphism
+   ============================================ */
+
+/* Darker popup with stronger glass effect and glow */
 .selectionPopup {
-    position: absolute;
-    background: var(--bg-glass-solid);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    padding: 8px 12px;
-    cursor: pointer;
-    z-index: 10000;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-md);
-    animation: scaleIn 0.2s ease-out;
-    gap: 8px;
-    min-height: 40px;
+  position: absolute;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 14px;
+  padding: 12px 16px;
+  cursor: pointer;
+  z-index: 10000;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 1), 0 0 32px rgba(14, 165, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  animation: scaleIn 0.2s ease-out;
+  gap: 12px;
+  min-height: 48px;
 }
 
+/* Top gradient border */
+.selectionPopup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0ea5e9, #06b6d4, transparent);
+  border-radius: 14px 14px 0 0;
+}
+
+/* Darker action buttons with bright gradient on hover */
 .selectionPopup button {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-color-light);
-    color: var(--text-primary);
-    font-size: 0.85rem;
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: var(--radius-md);
-    transition: var(--transition-fast);
-    font-weight: 500;
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  background: rgba(17, 17, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
 }
 
+/* Enhanced hover state with bright gradient */
 .selectionPopup button:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+  color: white;
+  border-color: #0ea5e9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.selectionPopup button:first-child {
-    margin-left: 0;
+.selectionPopup button:active {
+  transform: translateY(0);
 }
 
-.selectionPopup button:last-child {
-    margin-right: 0;
-}
-
-/* Icon styling for buttons */
+/* Icon styling within buttons */
 .selectionPopup .icon {
-    width: 14px;
-    height: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .selectionPopup {
-        padding: 6px 10px;
-        min-height: 36px;
-    }
+.selectionPopup button:hover .icon {
+  opacity: 1;
+}
 
-    .selectionPopup button {
-        padding: 5px 10px;
-        font-size: 0.8rem;
-    }
+/* Separator between buttons */
+.selectionPopup button + button {
+  margin-left: 10px;
+}
+
+/* Primary action button variant */
+.selectionPopup button.primary {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(6, 182, 212, 0.15));
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+.selectionPopup button.primary:hover {
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .selectionPopup {
+    padding: 10px 14px;
+    min-height: 44px;
+    gap: 10px;
+  }
+
+  .selectionPopup button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .selectionPopup .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }

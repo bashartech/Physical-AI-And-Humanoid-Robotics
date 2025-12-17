@@ -1,26 +1,23 @@
-/* .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
-} */
+/* ============================================
+   HOMEPAGE FEATURES - PREMIUM BLACK DARK THEME
+   True Black Background + Glass Cards + Animations
+   ============================================ */
+
+/* Pure black background with cosmic gradients */
 .features {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   width: 100%;
-  min-height: 600px;
+  min-height: 700px;
   position: relative;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: #000000;
+  overflow: hidden;
 }
 
-/* Enhanced background with more dynamic gradient layers */
+/* Cosmic background with animated gradients */
 .features::before {
   content: "";
   position: absolute;
@@ -28,80 +25,101 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(0, 217, 255, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 70% 80%, rgba(0, 255, 156, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.04) 0%, transparent 50%);
+  background: radial-gradient(circle at 25% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(139, 92, 246, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 60%);
   pointer-events: none;
-  animation: backgroundShift 10s ease-in-out infinite;
+  animation: backgroundShift 15s ease-in-out infinite;
+  background-size: 200% 200%;
 }
 
 .container {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
 }
 
-/* Enhanced section intro styling */
+/* Section intro with fade-in animation */
 .featuresIntro {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Brighter gradient text */
 .sectionTitle {
-  font-size: 2.5rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  font-size: 3.25rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .sectionSubtitle {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  max-width: 600px;
+  font-size: 1.3rem;
+  color: #a1a1aa;
+  max-width: 650px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
 .featuresRow {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Enhanced feature item with glassmorphism and animations */
+/* Darker glass cards with stronger glow effects */
 .featureItem {
-  background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(17, 17, 22, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
 }
 
-/* Added top border gradient animation */
+/* Staggered animation for feature items */
+.featureItem:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.featureItem:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.featureItem:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+/* Top gradient border */
 .featureItem::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0ea5e9, #06b6d4, transparent);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
-/* Enhanced inner gradient background */
+/* Inner glow effect */
 .featureItem::after {
   content: "";
   position: absolute;
@@ -109,18 +127,19 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(0, 255, 156, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   pointer-events: none;
-  border-radius: var(--radius-xl);
+  border-radius: 20px;
 }
 
+/* Enhanced hover state with stronger lift and glow */
 .featureItem:hover {
-  transform: translateY(-8px);
-  background: var(--bg-glass-solid);
-  border-color: var(--primary-color);
-  box-shadow: var(--shadow-glow), var(--shadow-lg);
+  transform: translateY(-12px);
+  background: rgba(17, 17, 22, 0.9);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 1), 0 0 32px rgba(14, 165, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .featureItem:hover::before {
@@ -134,48 +153,84 @@
 .featureIcon {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  animation: slideInDown 0.5s ease-out;
+  margin-bottom: 2rem;
+  animation: slideInDown 0.6s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
-/* Enhanced SVG styling */
+/* Brighter SVG with stronger glow */
 .featureSvg {
-  height: 120px;
-  width: 120px;
-  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.3));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 130px;
+  width: 130px;
+  filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.5));
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .featureItem:hover .featureSvg {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 0 25px rgba(0, 217, 255, 0.5));
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0 0 32px rgba(14, 165, 233, 0.8));
+  animation: float 3s ease-in-out infinite;
 }
 
-/* Enhanced feature content styling */
+/* Feature content */
+.featureContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Brighter gradient for titles */
 .featureContent h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .featureContent p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+  color: #a1a1aa;
+  font-size: 1rem;
   line-height: 1.8;
   flex-grow: 1;
 }
 
+/* Responsive design for mobile */
 @media (max-width: 996px) {
   .features {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
     min-height: auto;
   }
 
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .featureItem {
+    min-width: 100%;
+    max-width: none;
+    padding: 2.5rem;
+  }
+
+  .featureSvg {
+    height: 110px;
+    width: 110px;
+  }
+
+  .featureContent h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
   .sectionTitle {
     font-size: 2rem;
   }
@@ -183,32 +238,13 @@
   .sectionSubtitle {
     font-size: 1rem;
   }
-
-  .featureItem {
-    min-width: 100%;
-    max-width: none;
-    border-radius: var(--radius-lg);
-  }
-
-  .featureIcon {
-    margin-bottom: 1rem;
-  }
-
-  .featureSvg {
-    height: 100px;
-    width: 100px;
-  }
-
-  .featureContent h3 {
-    font-size: 1.2rem;
-  }
 }
 
-/* Added animation keyframes */
+/* Animation keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -230,13 +266,19 @@
 @keyframes backgroundShift {
   0%,
   100% {
-    background: radial-gradient(circle at 30% 20%, rgba(0, 217, 255, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 70% 80%, rgba(0, 255, 156, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.04) 0%, transparent 50%);
+    background-position: 0% 50%;
   }
   50% {
-    background: radial-gradient(circle at 40% 30%, rgba(0, 217, 255, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 60% 70%, rgba(0, 255, 156, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 50% 60%, rgba(255, 0, 110, 0.06) 0%, transparent 50%);
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: scale(1.2) rotate(8deg) translateY(0px);
+  }
+  50% {
+    transform: scale(1.2) rotate(8deg) translateY(-12px);
   }
 }
