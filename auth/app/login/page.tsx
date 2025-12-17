@@ -1,4 +1,3 @@
-
 "use client"
 
 import type React from "react"
@@ -47,7 +46,6 @@ export default function LoginPage() {
   }
 
   return (
-    /* Pure black background with cosmic gradients */
     <div
       style={{
         minHeight: "100vh",
@@ -55,13 +53,9 @@ export default function LoginPage() {
         alignItems: "center",
         justifyContent: "center",
         background: "#000000",
-        backgroundImage: `
-          radial-gradient(circle at 25% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
-          radial-gradient(circle at 75% 70%, rgba(139, 92, 246, 0.09) 0%, transparent 50%)
-        `,
-        padding: "3rem 1rem",
         position: "relative",
         overflow: "hidden",
+        padding: "2rem",
       }}
     >
       {/* Animated background layer */}
@@ -73,13 +67,15 @@ export default function LoginPage() {
           right: 0,
           bottom: 0,
           background: `
-            radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%)
+            radial-gradient(circle at 25% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 75% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 70%)
           `,
           pointerEvents: "none",
         }}
       />
 
+      {/* Main Content Area - Centered */}
       <div
         style={{
           maxWidth: "480px",

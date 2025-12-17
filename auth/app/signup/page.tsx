@@ -125,15 +125,12 @@ export default function SignupPage() {
         alignItems: "center",
         justifyContent: "center",
         background: "#000000",
-        backgroundImage: `
-          radial-gradient(circle at 25% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
-          radial-gradient(circle at 75% 70%, rgba(139, 92, 246, 0.09) 0%, transparent 50%)
-        `,
-        padding: "3rem 1rem",
         position: "relative",
         overflow: "hidden",
+        padding: "2rem",
       }}
     >
+      {/* Animated background layer */}
       <div
         style={{
           position: "absolute",
@@ -142,13 +139,15 @@ export default function SignupPage() {
           right: 0,
           bottom: 0,
           background: `
-            radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%)
+            radial-gradient(circle at 25% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 75% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 70%)
           `,
           pointerEvents: "none",
         }}
       />
 
+      {/* Main Content Area - Centered with scrollbar */}
       <div
         style={{
           maxWidth: "600px",
@@ -161,11 +160,47 @@ export default function SignupPage() {
           padding: "3.5rem",
           boxShadow: "0 24px 64px rgba(0, 0, 0, 1), 0 0 32px rgba(14, 165, 233, 0.3)",
           position: "relative",
-          zIndex: 1,
           maxHeight: "90vh",
           overflowY: "auto",
+          zIndex: 1,
         }}
+        className="signup-form-container"
       >
+        {/* Professional custom scrollbar styling */}
+        <style jsx>{`
+          .signup-form-container::-webkit-scrollbar {
+            width: 12px;
+          }
+
+          .signup-form-container::-webkit-scrollbar-track {
+            background: rgba(17, 17, 22, 0.4);
+            border-radius: 10px;
+            margin: 10px 0;
+          }
+
+          .signup-form-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            border-radius: 10px;
+            border: 2px solid rgba(10, 10, 15, 0.95);
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+          }
+
+          .signup-form-container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #06b6d4, #38bdf8);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.8);
+          }
+
+          .signup-form-container::-webkit-scrollbar-thumb:active {
+            background: linear-gradient(135deg, #0284c7, #0891b2);
+          }
+
+          /* Firefox scrollbar */
+          .signup-form-container {
+            scrollbar-width: thin;
+            scrollbar-color: #0ea5e9 rgba(17, 17, 22, 0.4);
+          }
+        `}</style>
+
         <div
           style={{
             position: "absolute",

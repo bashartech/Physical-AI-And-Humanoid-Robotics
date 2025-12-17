@@ -1,10 +1,10 @@
-
 /* ============================================
    HOMEPAGE FEATURES - PREMIUM BLACK DARK THEME
    True Black Background + Glass Cards + Animations
    ============================================ */
 
-/* Pure black background with cosmic gradients */
+/* Updated to pure black background matching hero section */
+/* Pure black background with cosmic gradients - matches hero section */
 .features {
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-/* Cosmic background with animated gradients */
+/* Cosmic background with animated gradients - identical to hero section */
 .features::before {
   content: "";
   position: absolute;
