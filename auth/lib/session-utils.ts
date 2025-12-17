@@ -1,11 +1,14 @@
-import { auth } from "./auth";
-import { db } from "./database";
+import { getAuth } from "./auth";
+import { getDb } from "./database";
 import { userProfiles } from "../db/schema";
 import { eq } from "drizzle-orm";
 import { NextRequest } from "next/server";
 
 // Get session with profile data
+const auth = getAuth()
+const db = getDb()
 export async function getSessionWithProfile(request: NextRequest) {
+  
   // Get session from Better Auth
   const session = await auth.api.getSession({
     headers: request.headers,
