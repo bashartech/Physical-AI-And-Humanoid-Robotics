@@ -38,7 +38,6 @@ export default function SignupPage() {
         email: formData.email,
         password: formData.password,
         name: formData.name || formData.email.split('@')[0], // Use name from form or derive from email
-        callbackURL: process.env.NEXT_PUBLIC_FRONTEND_URL || "https://physical-ai-and-humanoid-robotics-x.vercel.app/", // Redirect to frontend after signup
       });
 
       console.log("USER_RESULT",userResult)
@@ -90,7 +89,7 @@ export default function SignupPage() {
 
       if (profileResponse.ok) {
         // Successful signup with profile data - redirect to frontend
-        window.location.href = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3001';
+        window.location.href = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://physical-ai-and-humanoid-robotics-x.vercel.app/';
       } else {
         const errorData = await profileResponse.json();
         setError(errorData.message || 'Profile creation failed');

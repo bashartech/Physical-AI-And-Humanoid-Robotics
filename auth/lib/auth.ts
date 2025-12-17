@@ -160,6 +160,8 @@ export function getAuth() {
       ],
 
       trustHost: true,
+
+      socialCallbackUrl: process.env.NEXT_PUBLIC_FRONTEND_URL || "https://physical-ai-and-humanoid-robotics-x.vercel.app/",
     });
   }
 
