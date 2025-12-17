@@ -21,7 +21,7 @@ export default function SignupPage() {
 
   // Initialize Better Auth client
   const client = createAuthClient({
-    baseURL: process.env.BETTER_AUTH_URL || process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    baseURL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL || process.env.BETTER_AUTH_URL || "https://physical-ai-and-humanoid-robotics-ebon-seven.vercel.app/",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
