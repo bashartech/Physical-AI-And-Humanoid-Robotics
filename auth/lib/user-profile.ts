@@ -1,4 +1,4 @@
-import { db } from './database';
+import { getDb } from './database';
 import { userProfiles } from '../db/schema';
 import { eq, and } from 'drizzle-orm';
 
@@ -14,6 +14,8 @@ export const createUserProfile = async (userId: string, profileData: {
   preferredLanguage?: string;
 }) => {
   try {
+      const db = getDb()
+
     const [profile] = await db
       .insert(userProfiles)
       .values([
@@ -43,6 +45,8 @@ export const createUserProfile = async (userId: string, profileData: {
  * Get user profile by user ID
  */
 export const getUserProfile = async (userId: string) => {
+    const db = getDb()
+
   try {
     const [profile] = await db
       .select()
@@ -67,6 +71,8 @@ export const updateUserProfile = async (userId: string, profileData: {
   preferredLearningStyle?: string;
   preferredLanguage?: string;
 }) => {
+   const db = getDb()
+
   try {
     const [updatedProfile] = await db
       .update(userProfiles)
@@ -89,6 +95,8 @@ export const updateUserProfile = async (userId: string, profileData: {
  * Delete user profile
  */
 export const deleteUserProfile = async (userId: string) => {
+   const db = getDb()
+
   try {
     const result = await db
       .delete(userProfiles)

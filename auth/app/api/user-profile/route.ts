@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/database';
+import { getDb } from '@/lib/database';
 import { userProfiles } from '@/db/schema';
 import { eq } from 'drizzle-orm';
 
 export async function POST(request: NextRequest) {
+  const db = getDb()
+
   try {
     const { userId, skillLevel, hardwareExperience, softwareExperience, programmingLevel, preferredLearningStyle, preferredLanguage } = await request.json();
 

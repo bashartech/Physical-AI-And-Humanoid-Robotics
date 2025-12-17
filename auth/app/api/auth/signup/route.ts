@@ -1,8 +1,9 @@
-import { auth } from "@/lib/auth";
+import { getAuth } from "@/lib/auth";
 import { NextResponse } from "next/server";
 import { createUserProfile } from '../../../../lib/user-profile';
 
 export async function POST(req: Request) {
+  const auth = getAuth()
   const body = await req.json();
 
    const name = body.firstName && body.lastName

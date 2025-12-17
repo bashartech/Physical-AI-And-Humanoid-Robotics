@@ -1,7 +1,8 @@
-import { auth } from "@/lib/auth";
+import { getAuth } from "@/lib/auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
+  const auth = getAuth()
   try {
     const body = await request.json();
 
