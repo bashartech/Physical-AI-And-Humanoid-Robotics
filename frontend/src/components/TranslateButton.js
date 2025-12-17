@@ -20,7 +20,7 @@ const TranslateButton = ({ chapterPath, rawContent, selectedText, onTranslated, 
       // Get the actual content from the page if getContent function is provided
       const contentToTranslate = getContent ? getContent() : rawContent;
 
-      const res = await fetch("http://localhost:8000/translate", {
+      const res = await fetch("https://bashartc14-robotics-book.hf.space/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

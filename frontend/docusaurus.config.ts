@@ -51,8 +51,16 @@ const config: Config = {
       logo: {alt: 'Logo', src: 'img/logo_doca.PNG'},
       items: [
         {type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'Book'},
-        {href: process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000/login', label: 'Login', position: 'right'},
-        {href: process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000/signup', label: 'Sign Up', position: 'right'},
+        {
+  href: `${process.env.BETTER_AUTH_URL || 'http://localhost:3000'}/login`,
+  label: 'Login',
+  position: 'right'
+},
+        {
+  href: `${process.env.BETTER_AUTH_URL || 'http://localhost:3000'}/signup`,
+  label: 'Signup',
+  position: 'right'
+},
         {href: 'https://github.com/bashartech/Physical-AI-And-Humanoid-Robotics', label: 'GitHub', position: 'right'},
       ],
     },
@@ -77,11 +85,11 @@ const config: Config = {
           items: [
             {label: 'Sign Up'
               , href:
-               'http://localhost:3000/signup'
+               'https://physical-ai-and-humanoid-robotics-ebon-seven.vercel.app/signup'
               },
             {label: 'Login'
               , href:
-               'http://localhost:3000/login'
+               'https://physical-ai-and-humanoid-robotics-ebon-seven.vercel.app/login'
               },
 
           ],

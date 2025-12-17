@@ -11,7 +11,7 @@ const PersonalizeButton = ({ chapterPath, rawContent, onPersonalized }) => {
       return;
     }
 
-    const res = await fetch("http://localhost:8000/personalize", {
+    const res = await fetch("https://bashartc14-robotics-book.hf.space/personalize", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

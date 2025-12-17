@@ -18,8 +18,8 @@ export default function AuthNavbar(props) {
     });
   } else {
     items.push(
-      { type: 'link', label: 'Login', position: 'right', href: 'http://localhost:3000/login' },
-      { type: 'link', label: 'Sign Up', position: 'right', href: 'http://localhost:3000/signup' },
+      { type: 'link', label: 'Login', position: 'right', href: 'https://physical-ai-and-humanoid-robotics-ebon-seven.vercel.app/login' },
+      { type: 'link', label: 'Sign Up', position: 'right', href: 'https://physical-ai-and-humanoid-robotics-ebon-seven.vercel.app/signup' },
     );
   }
 
