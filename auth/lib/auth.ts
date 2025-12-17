@@ -1,8 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "./database";
-import { userProfiles } from "../db/schema";
-import { eq } from "drizzle-orm";
 import * as schema from "../db/schema";
 
 // Define the plugin with proper typing
@@ -84,12 +82,12 @@ export const auth = betterAuth({
     },
   },
 
-  socialProviders: {
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    },
-  },
+  // socialProviders: {
+  //   google: {
+  //     clientId: process.env.GOOGLE_CLIENT_ID!,
+  //     clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+  //   },
+  // },
 
   /* ✅ FIX: explicitly allow frontend + backend origins */
   trustedOrigins: [
@@ -98,22 +96,22 @@ export const auth = betterAuth({
     process.env.BETTER_AUTH_URL || "http://localhost:3000",
   ],
 
-  cookies: {
-    sessionToken: {
-      name: "better-auth.session",
-      options: {
-        httpOnly: true,
-        secure: false,          // false for localhost development
-        sameSite: "none",       // Required for cross-origin requests between ports
-        path: "/",
-      },
-    },
-  },
+  // cookies: {
+  //   sessionToken: {
+  //     name: "better-auth.session",
+  //     options: {
+  //       httpOnly: true,
+  //       secure: false,          // false for localhost development
+  //       sameSite: "none",       // Required for cross-origin requests between ports
+  //       path: "/",
+  //     },
+  //   },
+  // },
 
   trustHost: true,
 
-  socialCallbackUrl:
-    process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3001",
+  // socialCallbackUrl:
+  //   process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3001",
 
   // plugins: [userProfilePlugin()],
 });
