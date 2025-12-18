@@ -51,24 +51,40 @@ async def translate_content_tool(raw_md: str, target_language: str = "ur", prese
         - Do NOT change the markdown syntax, only translate the text content""" if preserve_formatting else ""
 
         prompt = f"""
-        Translate the following educational content to {target_lang_name}.
+        TRANSLATE the following educational content to {target_lang_name}.
 
         {formatting_instruction}
+
+        ***CRITICAL INSTRUCTION:*** YOU MUST OUTPUT THE TRANSLATED CONTENT IN MARKDOWN FORMAT.
+        This means:
+        - Headings: Use '#', '##', '###', etc.
+        - Bold: Use '**' or '__' around the text.
+        - Italic: Use '*' or '_' around the text.
+        - Links: Use '[text](url)'.
+        - Images: Use '![alt](url)'.
+        - Lists: Use '-' or '*' for bullet points, '1.', '2.', etc. for numbered lists.
+        - Code: Use '`' for inline code and '```' for code blocks.
+        - Blockquotes: Use '>'.
+        - Etc.
+
+        PRESERVE the EXACT markdown syntax from the ORIGINAL content.
+        TRANSLATE ONLY the TEXTUAL CONTENT within these markdown structures.
+        DO NOT return the content as plain text or pure HTML.
 
         Content to translate:
         {raw_md}
 
         CRITICAL TRANSLATION RULES:
-        1. Translate ONLY the text content, NOT the markdown syntax
-        2. Preserve ALL markdown formatting, structure, and hierarchy exactly
-        3. Keep headings (# ## ###) with same levels and order
-        4. Keep lists (bullet/numbered) with same structure
-        5. Keep code blocks with same language specifiers
-        6. Maintain the same document organization and flow
-        7. If target language is Urdu, use Arabic script
-        8. Do not add, remove, or reorder sections - only translate text
-        9. Maintain all technical terminology appropriately in context
-        10. Ensure the translated content has the same readability and structure as the original
+        1. Output format: MARKDOWN.
+        2. Translate ONLY the text content within markdown elements, PRESERVE the markdown syntax exactly.
+        3. Keep headings (# ## ###) with same levels and order.
+        4. Keep lists (bullet/numbered) with same structure.
+        5. Keep code blocks with same language specifiers.
+        6. Maintain the same document organization and flow.
+        7. If target language is Urdu, use Arabic script.
+        8. Do not add, remove, or reorder sections - only translate text.
+        9. Maintain all technical terminology appropriately in context.
+        10. Ensure the translated content has the same readability and structure as the original.
         """
 
         # Create a translation agent
@@ -87,9 +103,16 @@ async def translate_content_tool(raw_md: str, target_language: str = "ur", prese
             input=prompt
         )
 
-        return result.final_output
+        final_output = result.final_output
+        # DEBUG: Log the raw output from the AI
+        print(f"DEBUG: Raw AI output for {target_language}:\n{final_output}\n---END OUTPUT---")
+        logging.info(f"Raw AI output length for {target_language}: {len(final_output)}")
+
+        return final_output
     except Exception as e:
-        logging.error(f"Error in translation: {e}")
+        logging.error(f"Error in translation for {target_language}: {e}")
+        # DEBUG: Log the original content being returned as fallback
+        print(f"DEBUG: Translation failed for {target_language}, returning original content.")
         # Return original content if translation fails
         return raw_md
 

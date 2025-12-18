@@ -738,6 +738,39 @@ table tr:last-child td {
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.8);
 }
 
+/* ============================================
+   URDU RTL CONTENT STYLING
+   ============================================ */
+
+/* Style applied when Urdu content is displayed */
+.rtl-urdu-content {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Ensure nested elements like lists, headings, etc., also follow RTL */
+.rtl-urdu-content h1,
+.rtl-urdu-content h2,
+.rtl-urdu-content h3,
+.rtl-urdu-content h4,
+.rtl-urdu-content h5,
+.rtl-urdu-content h6,
+.rtl-urdu-content p,
+.rtl-urdu-content li,
+.rtl-urdu-content blockquote,
+.rtl-urdu-content td,
+.rtl-urdu-content th {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Adjust list padding/margin for RTL */
+.rtl-urdu-content ul,
+.rtl-urdu-content ol {
+  padding-right: 1.75rem !important;
+  padding-left: 0 !important;
+}
+
 .footer__title {
   color: var(--primary-color) !important;
   font-weight: 700;

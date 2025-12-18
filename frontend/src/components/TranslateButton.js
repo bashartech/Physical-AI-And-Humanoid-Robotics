@@ -121,7 +121,7 @@ const TranslateButton = ({ chapterPath, rawContent, selectedText, onTranslated, 
       }
 
       const data = await res.json()
-      onTranslated(data.translated_md)
+      onTranslated(data.translated_md, targetLanguage) // Pass the target language
     } catch (error) {
       console.error("Translation error:", error)
       alert(`Translation failed: ${error.message || "Please try again"}`)
