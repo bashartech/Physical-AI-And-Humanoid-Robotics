@@ -50,7 +50,8 @@ app.add_middleware(
     allow_origins=[os.getenv("NEXT_PUBLIC_FRONTEND_URL"),
                    "http://localhost:3001",
                    "http://localhost:3000",
-                   "https://physical-ai-and-humanoid-robotics-x.vercel.app/"
+                   "https://physical-ai-and-humanoid-robotics-x.vercel.app/",
+                   "https://physical-ai-and-humanoid-robotics-x.vercel.app/docs/intro"
                    ],     # Default to localhost
     allow_credentials=True,
     allow_methods=["*"],
