@@ -74,7 +74,7 @@ function HomepageHeader() {
           {/* Right Column - Book Image */}
           <div className={styles.heroRight}>
             <img
-              src="/images/img3.png"
+              src="/img3.png"
               alt="Physical AI Robotics Book"
               className={styles.bookImage}
             />
