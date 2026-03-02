@@ -38,18 +38,14 @@ function HomepageHeader() {
                 <span>START READING</span>
                 <span className={styles.btnIcon}>→</span>
               </Link>
-              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="#features">
-                <span>Explore Features</span>
+              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/blog">
+                <span>Explore Blog</span>
               </Link>
             </div>
 
             <div className={styles.socialProof}>
               <div className={styles.liveIndicator}></div>
               <span>1,250+ developers learning</span>
-              <a href="#reviews">
-                <span>Live Reviews</span>
-                <span>→</span>
-              </a>
             </div>
 
             <div className={styles.coAuthored}>
@@ -61,6 +57,7 @@ function HomepageHeader() {
                   className={styles.avatar}
                 />
                 <img
+
                   src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka"
                   alt="Author 2"
                   className={styles.avatar}
