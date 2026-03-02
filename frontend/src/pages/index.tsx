@@ -38,8 +38,8 @@ function HomepageHeader() {
                 <span>START READING</span>
                 <span className={styles.btnIcon}>→</span>
               </Link>
-              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/blog">
-                <span>Explore Blog</span>
+              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/intro">
+                <span>Explore Book</span>
               </Link>
             </div>
 
@@ -74,7 +74,7 @@ function HomepageHeader() {
           {/* Right Column - Book Image */}
           <div className={styles.heroRight}>
             <img
-              src="/images/img3.PNG"
+              src="/images/img3.png"
               alt="Physical AI Robotics Book"
               className={styles.bookImage}
             />
@@ -131,8 +131,8 @@ export default function Home(): ReactNode {
                 <span>Get Started Now</span>
                 <span className={styles.btnIcon}>→</span>
               </Link>
-              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/blog">
-                <span>Read Our Blog</span>
+              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/intro">
+                <span>Read Our Book</span>
               </Link>
             </div>
           </div>
