@@ -16,40 +16,71 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroContent}>
-          <div className={styles.notificationBadge}>
-            <span className={styles.badgeIcon}>✨</span>
-            <span>Premium Documentation Platform</span>
+          {/* Left Column */}
+          <div className={styles.heroLeft}>
+            <div className={styles.topTagline}>
+              AI-FIRST FUTURE — BUILD & EXPLORE PHYSICAL AI
+            </div>
+
+            <Heading as="h1" className={styles.heroTitle}>
+              <span className={styles.heroTitleWhite}>THE PHYSICAL AI</span>
+              <span className={styles.heroTitleBlue}>ROBOTICS HUB</span>
+            </Heading>
+
+            <p className={styles.heroSubtitle}>
+              The <strong>Comprehensive Blueprint</strong> for Building and Understanding{" "}
+              <strong>Humanoid Robots</strong>. Full-Stack Documentation for{" "}
+              <strong>Physical AI Systems</strong>, from Hardware to Intelligence.
+            </p>
+
+            <div className={styles.buttons}>
+              <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/intro">
+                <span>START READING</span>
+                <span className={styles.btnIcon}>→</span>
+              </Link>
+              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="#features">
+                <span>Explore Features</span>
+              </Link>
+            </div>
+
+            <div className={styles.socialProof}>
+              <div className={styles.liveIndicator}></div>
+              <span>1,250+ developers learning</span>
+              <a href="#reviews">
+                <span>Live Reviews</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <div className={styles.coAuthored}>
+              <span className={styles.coAuthoredLabel}>Co-Authored By:</span>
+              <div className={styles.avatars}>
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                  alt="Author 1"
+                  className={styles.avatar}
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka"
+                  alt="Author 2"
+                  className={styles.avatar}
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luna"
+                  alt="Author 3"
+                  className={styles.avatar}
+                />
+              </div>
+            </div>
           </div>
 
-          <Heading as="h1" className={clsx("hero__title", styles.heroTitle)}>
-            {siteConfig.title}
-          </Heading>
-          <p className={clsx("hero__subtitle", styles.heroSubtitle)}>{siteConfig.tagline}</p>
-
-          <div className={styles.buttons}>
-            <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/intro">
-              <span className={styles.btnIcon}>📖</span>
-              <span>Start Reading</span>
-            </Link>
-            {/* <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="#features">
-              <span className={styles.btnIcon}>🔬</span>
-              <span>View Features</span>
-            </Link> */}
-          </div>
-
-          <div className={styles.highlights}>
-            <div className={styles.highlight}>
-              <div className={styles.highlightIcon}>⚡</div>
-              <span>Fast Performance</span>
-            </div>
-            <div className={styles.highlight}>
-              <div className={styles.highlightIcon}>🔒</div>
-              <span>Secure & Reliable</span>
-            </div>
-            <div className={styles.highlight}>
-              <div className={styles.highlightIcon}>🚀</div>
-              <span>Continuous Updates</span>
-            </div>
+          {/* Right Column - Book Image */}
+          <div className={styles.heroRight}>
+            <img
+              src="/images/img3.png"
+              alt="Physical AI Robotics Book"
+              className={styles.bookImage}
+            />
           </div>
         </div>
       </div>
@@ -68,6 +99,47 @@ export default function Home(): ReactNode {
       <main>
         {/* <ChatWidget /> */}
         <HomepageFeatures />
+
+        {/* Stats Section */}
+        <section className={styles.statsSection}>
+          <div className={styles.statsContainer}>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>50+</div>
+              <div className={styles.statLabel}>Comprehensive Chapters</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>1,250+</div>
+              <div className={styles.statLabel}>Active Learners</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>100%</div>
+              <div className={styles.statLabel}>Open Source</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>24/7</div>
+              <div className={styles.statLabel}>Community Support</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className={styles.ctaSection}>
+          <div className={styles.ctaContent}>
+            <h2 className={styles.ctaTitle}>Ready to Build the Future?</h2>
+            <p className={styles.ctaSubtitle}>
+              Join thousands of developers mastering humanoid robotics and physical AI systems
+            </p>
+            <div className={styles.ctaButtons}>
+              <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/intro">
+                <span>Get Started Now</span>
+                <span className={styles.btnIcon}>→</span>
+              </Link>
+              <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/blog">
+                <span>Read Our Blog</span>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   )
