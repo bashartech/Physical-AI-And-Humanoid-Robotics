@@ -2,7 +2,7 @@
 
 This project integrates multiple AI-powered features into a comprehensive educational platform that combines RAG (Retrieval Augmented Generation), user authentication, content personalization, and translation capabilities. The system follows a multi-service architecture with Next.js for authentication, FastAPI for backend processing, and Docusaurus for frontend delivery.
 
-## Complete Technical Workflow & Implementation
+## Complete Technical Workflow & Implementation 
 
 ### System Architecture Overview
 
